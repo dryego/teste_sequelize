@@ -4,7 +4,7 @@ const schemaCadastro = Joi.object({
   nome: Joi.string().required().min(3),
   email: Joi.string().email().required(),
   senha: Joi.string().min(4).required(),
-  permicoes: Joi.number().min(0).max(3).required(),
+  permicoes: Joi.string().min(5).max(7).required(),
 });
 
 const schemaLogin = Joi.object({

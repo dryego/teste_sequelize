@@ -57,7 +57,7 @@ const Usuario = sequelize.define("usuario", {
     defaultValue: true,
   },
   permicoes: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING(7),
     allowNull: false,
   },
 });

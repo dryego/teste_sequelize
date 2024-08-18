@@ -17,6 +17,7 @@ const fazerLogin = async (req, res) => {
       id: usuario.id,
       nome: usuario.nome,
       email: usuario.email,
+      permicoes: usuario.permicoes,
       token: login.token,
     };
 

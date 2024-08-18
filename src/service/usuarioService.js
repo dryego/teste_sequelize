@@ -1,6 +1,7 @@
 const Usuario = require("../model/usuario");
 const { buscarUsuarioEmail } = require("../util/buscas");
 const bcrypt = require("bcrypt");
+const { tiposPermicoes } = require("../util/permicoes");
 
 const listaUsuarios = async () => {
   try {
@@ -24,6 +25,11 @@ const cadastroNovoUsuario = async (nome, email, senha, permicoes) => {
 
     const senhaCriptografada = await bcrypt.hash(senha, 10);
 
+    if (!Object.values(tiposPermicoes).includes(permicoes)) {
+      throw new Error(
+        `Permissão inválida. As permissões válidas são: ${tiposPermicoes.ADMIN}, ${tiposPermicoes.USUARIO}, ${tiposPermicoes.CLIENTE}.`
+      );
+    }
     const novoUsuario = await Usuario.create({
       nome,
       email,
@@ -31,7 +37,7 @@ const cadastroNovoUsuario = async (nome, email, senha, permicoes) => {
       permicoes,
     });
 
-    return { successo: true, data: novoUsuario };
+    return { sucesso: true, data: novoUsuario };
   } catch (error) {
     return { successo: false, error: error.message };
   }
@@ -39,5 +45,5 @@ const cadastroNovoUsuario = async (nome, email, senha, permicoes) => {
 
 module.exports = {
   cadastroNovoUsuario,
-  listaUsuarios
+  listaUsuarios,
 };
