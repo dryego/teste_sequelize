@@ -26,7 +26,7 @@ const cadastroUsuario = async (req, res) => {
       permicoes
     );
 
-    if (novoUsuario.successo === false) {
+    if (novoUsuario.sucesso === false) {
       return res.status(404).json({ mensagen: novoUsuario.error });
     }
 
