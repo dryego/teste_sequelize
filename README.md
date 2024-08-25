@@ -5,47 +5,47 @@ Pré-requisitos
 
 Antes de executar a aplicação, certifique-se de ter os seguintes componentes instalados:
 
-   Node.js v22.3.0 ou superior
-   npm v10.0.1 ou superior
-   Banco de dados compatível com Sequelize (MySQL, PostgreSQL, SQLite, etc.)
+      Node.js v22.3.0 ou superior
+      npm v10.0.1 ou superior
+      Banco de dados compatível com Sequelize (MySQL, PostgreSQL, SQLite, etc.)
 
 Instalação
 
    Clone o repositório para sua máquina local:
 
-bash
-  $git clone https://github.com/dryego/teste_sequelize
-  $cd seu-repositorio
+      bash
+        $git clone https://github.com/dryego/teste_sequelize
+        $cd seu-repositorio
 
 Instale as dependências do projeto:
 
-bash
-  $npm install
+      bash
+        $npm install
 
 Configure as variáveis de ambiente:
 
 Crie um arquivo .env na raiz do projeto e configure as seguintes variáveis:
 
-makefile
-  DB_HOST=localhost
-  DB_USER=seu_usuario
-  DB_PASS=sua_senha
-  DB_NAME=nome_do_banco
-  JWT_SECRET=seu_segredo_jwt
+      makefile
+        DB_HOST=localhost
+        DB_USER=seu_usuario
+        DB_PASS=sua_senha
+        DB_NAME=nome_do_banco
+        JWT_SECRET=seu_segredo_jwt
 
 Configure o banco de dados:
 
 Execute as migrações para configurar o banco de dados:
 
-bash
-  $npx sequelize db:migrate
+      bash
+        $npx sequelize db:migrate
 
 Execução
 
 Para iniciar a aplicação em ambiente de desenvolvimento, use o comando:
 
-bash
-  $npm run dev
+      bash
+        $npm run dev
 
 A aplicação estará disponível em http://localhost:3000.
 
@@ -53,8 +53,8 @@ Testes
 
 Para executar os testes unitários da aplicação, use o comando:
 
-bash
-  $npm run test
+      bash
+        $npm run test
 
 Estrutura do Projeto
 
